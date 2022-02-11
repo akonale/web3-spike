@@ -1,6 +1,6 @@
 "use strict"
 
-public function f(myVar, myfunc) {
+function f(myVar, myfunc) {
     console.log(myVar)
     myfunc(myVar)
 }

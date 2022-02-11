@@ -1,18 +1,20 @@
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-require('dotenv').config();
 require("@nomiclabs/hardhat-waffle");
+const sendFavouriteNum = require("./scripts/send-favorite-num.js");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
-
   for (const account of accounts) {
     console.log(account.address);
   }
 });
+
+task("sendFavNum", "Sends favorite number", sendFavouriteNum())
+
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -22,9 +24,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
-  defaultNetwork: "ropsten",
+  defaultNetwork: "localhost",
   networks: {
-    abc: {
+    localhost: {
       url: "http://127.0.0.1:8545/",
       accounts: ["0xde9be858da4a475276426320d5e9262ecfc3ba460bfac56360bfa6c4c28b4ee0"]
     },

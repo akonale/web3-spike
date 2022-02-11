@@ -17,12 +17,9 @@ async function main() {
   const FavoriteNumContract = await hre.ethers.getContractFactory("FavoriteNum");
   const favoriteNumContract = await FavoriteNumContract.deploy();
 
-  await greeter.deployed();
+  await favoriteNumContract.deployed();
 
-  greeter.connect("") // to different address
-  greeter.methods.greet().call().then(value => console.log(value))
-
-  console.log("Helloworld deployed to:", greeter.address);
+  console.log("FavoriteNumContract deployed to:", favoriteNumContract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
