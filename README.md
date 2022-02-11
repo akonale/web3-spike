@@ -1,11 +1,19 @@
-# Basic Sample Hardhat Project
+# Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+## Send favourite number contract
+Sends arbitrary number from one account to another. Steps:
+- npx hardhat compile # Compiles contract
+- npx hardhat node # Starts local eth node 
+- npx hardhat run scripts/deploy.js (Uses network defined in hardhat.config.js. 
+    Use `ropsten` network to use alchemy client with ropsten test network. Returns contract address)
+- npx hardhat sendFavNum # Runs contract. todo: remove hardcoding of contract address and stuff
 
-Try running some of the following tasks:
+# Notes
+
+## Basic hardhat commands
 
 ```shell
-npx hardhat accounts
+npx hardhat <task defined in hardhat.config.js>
 npx hardhat compile
 npx hardhat clean
 npx hardhat test
@@ -35,9 +43,7 @@ npx hardhat node
 
 #### Run scripts
 - Deploy contract: 
-npx hardhat run scripts/deploy.js --network localhost
-
-- 
+npx hardhat run scripts/deploy.js --network localhost 
 
 
 
